@@ -43,7 +43,7 @@
         top 50%
         transform translate(-50%,-50%)
         font-size 24px
-        animation transfrom3d infinite 2s linear
+        animation transfrom3d infinite 1.8s linear
       @keyframes transfrom3d {
         0%{-webkit-transform:rotate(0deg);}
         25%{-webkit-transform:rotate(90deg);}
