@@ -1,5 +1,9 @@
-export default api: {
-    login:{
-        
-    } 
+export default {
+    api: {
+        login: {
+            url: '/login/cellphone',
+            query: true,
+            method:'post'
+        }
+    }
 }

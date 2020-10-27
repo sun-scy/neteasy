@@ -1,6 +1,11 @@
 const baseUrl = process.env.VUE_APP_API_BASE_URL
 
+function convertObjToURI(paramsObj = {}) {
+    return Object.keys(paramsObj).map((k) => (encodeURIComponent(k) + "=" + encodeURIComponent(paramsObj[k]))).join('&');
+}
 export default (config, api) => {
+
+    console.log(config, '======================')
     if (api === undefined)
         throw new Error('该函数第二个参数是必须传的')
     if (!(api instanceof Object))
@@ -24,7 +29,8 @@ export default (config, api) => {
             isForm,
             hooks,
             needToken,
-            query
+            query,
+            url
         } = itemApi
         processedApi[name] = async (data = {}, paramsStr) => {
             if (!(data instanceof Object)) {
@@ -40,15 +46,11 @@ export default (config, api) => {
                     transformData.append(key, data[key])
                 }
             } else if (query && Object.keys(data) !== 0) {
-                let urlencodedStr = ''
-                for (let [key, value] of Object.entries(data)) {
-                    urlencodedStr += `${key}=${value}&`
-                }
-                transformData = urlencodedStr.split('').slice(0, -1).join('')
+                transformData = convertObjToURI(data)
             } else {
                 transformData = data
             }
-            let newUrl = baseUrl
+            let newUrl = '/api'+ url
             if (paramsStr) {
                 newUrl = newUrl + '/' + paramsStr
             }
