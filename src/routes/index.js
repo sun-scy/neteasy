@@ -1,7 +1,11 @@
 import Login from './Login'
 
 const routes =  [
-    ...Login
+    ...Login,
+    {
+      path:'/',
+      redirect:'/login'
+    }
 ]
 
 export default routes
