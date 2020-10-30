@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-27 13:46:18
- * @LastEditTime: 2020-10-27 14:18:38
+ * @LastEditTime: 2020-10-27 15:17:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \netease\src\components\Loading\Loading.vue
@@ -15,6 +15,9 @@
 
 <script>
  export default {
+   props:{
+   
+   },
    data () {
      return {
         

@@ -8,7 +8,7 @@
 -->
 <template>
   <div>
-    <van-form @submit="onSubmit">
+    <!-- <van-form @submit="onSubmit">
       <van-field
         v-model="username"
         name="用户名"
@@ -29,17 +29,20 @@
           提交
         </van-button>
       </div>
-    </van-form>
-    <Loading></Loading>
+    </van-form> -->
+    <!-- <Loading></Loading> -->
+    <upload></upload>
   </div>
 </template>
 
 <script>
 import { Form, Field, Button } from "vant";
 import Loading from '../../components/Loading/Loading';
+import upload from '../../components/upload/upload'
 export default {
   components: {
     Loading,
+    upload,
     [Form.name]: Form,
     [Field.name]: Field,
     [Button.name]: Button,

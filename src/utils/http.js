@@ -4,8 +4,6 @@ function convertObjToURI(paramsObj = {}) {
     return Object.keys(paramsObj).map((k) => (encodeURIComponent(k) + "=" + encodeURIComponent(paramsObj[k]))).join('&');
 }
 export default (config, api) => {
-
-    console.log(config, '======================')
     if (api === undefined)
         throw new Error('该函数第二个参数是必须传的')
     if (!(api instanceof Object))
