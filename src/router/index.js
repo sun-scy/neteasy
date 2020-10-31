@@ -10,6 +10,7 @@ const originalPush = vueRouter.prototype.push
 vueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
+
 export default new vueRouter({
     mode: 'history',
     routes

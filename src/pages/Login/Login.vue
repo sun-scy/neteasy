@@ -8,7 +8,7 @@
 -->
 <template>
   <div>
-    <!-- <van-form @submit="onSubmit">
+    <van-form @submit="onSubmit">
       <van-field
         v-model="username"
         name="用户名"
@@ -29,9 +29,9 @@
           提交
         </van-button>
       </div>
-    </van-form> -->
+    </van-form>
     <!-- <Loading></Loading> -->
-    <upload></upload>
+    <!-- <upload></upload> -->
   </div>
 </template>
 
@@ -39,6 +39,8 @@
 import { Form, Field, Button } from "vant";
 import Loading from '../../components/Loading/Loading';
 import upload from '../../components/upload/upload'
+import {mapActions} from 'vuex'
+import {SAVEUSERINFO} from '../../store/mutation_type'
 export default {
   components: {
     Loading,
@@ -55,13 +57,17 @@ export default {
   },
   created() {},
   methods: {
+    ...mapActions([SAVEUSERINFO]),
     async onSubmit() {
-      let body = await this.$http.Login.login({
-        phone: this.username,
-        password: this.password
-      });
+      // let body = await this.$http.Login.login({
+      //   phone: this.username,
+      //   password: this.password
+      // });
 
-      console.log(body);
+      // console.log(body);
+        this[SAVEUSERINFO]({phone:this.username,password:this.password})
+
+ 
     }
   }
 };

@@ -1,5 +1,4 @@
 import axios from 'axios'
-import home from './config'
 
 const homeAxios = axios.create({
     timeout:10000
