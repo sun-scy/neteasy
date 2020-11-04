@@ -6,7 +6,6 @@ import router from './router';
 import './common/icon/iconfont.css';
 // eslint-disable-next-line import/no-unresolved
 import 'lib-flexible/flexible';
-
 Vue.config.productionTip = false;
 Vue.prototype.$http = http;
 

@@ -14,8 +14,8 @@
         name="用户名"
         label="用户名"
         placeholder="用户名"
-        :rules="[{ required: true, message: '请填写用户名' }]"
       />
+
       <van-field
         v-model="password"
         type="password"
@@ -30,6 +30,8 @@
         </van-button>
       </div>
     </van-form>
+
+    <form></form>
     <!-- <Loading></Loading> -->
     <!-- <upload></upload> -->
   </div>
@@ -51,6 +53,7 @@ export default {
   },
   data() {
     return {
+      errors: ["11111"],
       username: "",
       password: "",
     };
