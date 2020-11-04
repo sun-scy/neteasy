@@ -24,7 +24,7 @@
         placeholder="密码"
         :rules="[{ required: true, message: '请填写密码' }]"
       />
-      <div style="margin: 16px;">
+      <div style="margin: 16px">
         <van-button round block type="info" native-type="submit">
           提交
         </van-button>
@@ -37,10 +37,10 @@
 
 <script>
 import { Form, Field, Button } from "vant";
-import Loading from '../../components/Loading/Loading';
-import upload from '../../components/upload/upload'
-import {mapActions} from 'vuex'
-import {SAVEUSERINFO} from '../../store/mutation_type'
+import Loading from "../../components/Loading/Loading";
+import upload from "../../components/upload/upload";
+import { mapActions } from "vuex";
+import { SAVEUSERINFO } from "../../store/mutation_type";
 export default {
   components: {
     Loading,
@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       username: "",
-      password: ""
+      password: "",
     };
   },
   created() {},
@@ -65,11 +65,9 @@ export default {
       // });
 
       // console.log(body);
-        this[SAVEUSERINFO]({phone:this.username,password:this.password})
-
- 
-    }
-  }
+      this[SAVEUSERINFO]({ phone: this.username, password: this.password });
+    },
+  },
 };
 </script>
 
