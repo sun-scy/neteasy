@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-10-27 09:55:12
- * @LastEditTime: 2020-10-27 14:09:58
+ * @LastEditTime: 2020-11-10 11:00:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \netease\src\pages\Login\Login.vue
@@ -42,7 +42,7 @@ import { Form, Field, Button } from "vant";
 import Loading from "../../components/Loading/Loading";
 import upload from "../../components/upload/upload";
 import { mapActions } from "vuex";
-import { SAVEUSERINFO } from "../../store/mutation_type";
+import { SAVEUSERINFO, GETBANNER } from "../../store/mutation_type";
 export default {
   components: {
     Loading,
@@ -60,7 +60,7 @@ export default {
   },
   created() {},
   methods: {
-    ...mapActions([SAVEUSERINFO]),
+    ...mapActions([SAVEUSERINFO, GETBANNER]),
     async onSubmit() {
       // let body = await this.$http.Login.login({
       //   phone: this.username,
@@ -68,7 +68,10 @@ export default {
       // });
 
       // console.log(body);
-      this[SAVEUSERINFO]({ phone: this.username, password: this.password });
+      // this[SAVEUSERINFO]({ phone: this.username, password: this.password });
+      let res = await this.$http.Login.banner();
+
+      console.log(res);
     },
   },
 };

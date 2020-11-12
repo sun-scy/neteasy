@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-26 14:57:50
+ * @LastEditTime: 2020-11-10 09:31:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \netease\public\index.html
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,5 +21,8 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+      <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
   </body>
 </html>
